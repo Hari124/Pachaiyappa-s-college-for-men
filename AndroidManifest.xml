@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="52" android:versionName="3.5" package="com.duckbone.callreminder" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="22" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <application android:theme="@style/StyleTheme" android:label="@string/app_name" android:icon="@mipmap/launcher_icon" android:name="com.duckbone.callreminder.MyApplication" android:allowBackup="true">
+        <provider android:name="com.duckbone.callreminder.DBProvider" android:authorities="@string/authority" />
+        <activity android:theme="@style/SplashTheme" android:label="@string/app_name" android:name="com.duckbone.callreminder.SplashActivity" />
+        <activity android:theme="@style/AppBaseTheme_Launcher" android:label="@string/app_name" android:name="com.duckbone.callreminder.MainActivity" android:taskAffinity="" android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:windowSoftInputMode="stateUnchanged|stateHidden|stateAlwaysHidden|stateAlwaysVisible|adjustPan|adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_create_call_reminder" android:name="com.duckbone.callreminder.CreateCallReminder" android:windowSoftInputMode="UNKNOWN_DATA_0x0" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/title_activity_edit_call_reminder" android:name="com.duckbone.callreminder.EditCallReminder" android:windowSoftInputMode="stateHidden|stateAlwaysHidden" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/title_activity_create_miscreminder" android:name="com.duckbone.callreminder.CreateMiscReminder" android:configChanges="orientation|screenSize" android:windowSoftInputMode="UNKNOWN_DATA_0x0" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/title_activity_edit_misc_reminder" android:name="com.duckbone.callreminder.EditMiscReminder" android:configChanges="orientation|screenSize" android:windowSoftInputMode="stateHidden|stateAlwaysHidden" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/title_activity_create_sms_reminder" android:name="com.duckbone.callreminder.CreateSmsReminder" android:windowSoftInputMode="UNKNOWN_DATA_0x0" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/title_activity_edit_sms_reminder" android:name="com.duckbone.callreminder.EditSmsReminder" android:windowSoftInputMode="stateHidden|stateAlwaysHidden" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/email_reminder" android:name="com.duckbone.callreminder.CreateEmailReminder" android:windowSoftInputMode="UNKNOWN_DATA_0x0" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/email_reminder" android:name="com.duckbone.callreminder.EditEmailReminder" android:windowSoftInputMode="UNKNOWN_DATA_0x0" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/title_activity_create_call_note" android:name="com.duckbone.callreminder.CreateCallNote" android:windowSoftInputMode="UNKNOWN_DATA_0x0" android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:label="@string/title_activity_edit_call_note" android:name="com.duckbone.callreminder.EditCallNote" android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity android:label="@string/title_activity_create_from_call_log" android:name="com.duckbone.callreminder.CreateFromCallLog" />
+        <activity android:theme="@style/Theme_Transparent" android:name="com.duckbone.callreminder.CallReminderPopup" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_misc_reminder_popup" android:name="com.duckbone.callreminder.MiscReminderPopup" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_misc_reminder_popup" android:name="com.duckbone.callreminder.MiscReminderPopupPreAlarm" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_sms_reminder_popup" android:name="com.duckbone.callreminder.SmsReminderPopup" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme_Transparent" android:name="com.duckbone.callreminder.EmailReminderPopup" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <activity android:label="@string/title_activity_deleted_reminders_list" android:name="com.duckbone.callreminder.DeletedRemindersList" />
+        <activity android:label="@string/title_activity_settings" android:name="com.duckbone.callreminder.SettingsActivity" />
+        <activity android:label="@string/notification_settings" android:name="com.duckbone.callreminder.SettingsNotifications" />
+        <activity android:label="@string/after_call_window" android:name="com.duckbone.callreminder.SettingsAfterCallWindow" />
+        <activity android:label="@string/automatic_reminders" android:name="com.duckbone.callreminder.SettingsAutomaticReminders" />
+        <activity android:label="@string/call_notes" android:name="com.duckbone.callreminder.SettingsCallNotes" />
+        <activity android:label="@string/quick_reminder" android:name="com.duckbone.callreminder.SettingsQuickReminders" />
+        <activity android:label="@string/pref_header_general" android:name="com.duckbone.callreminder.SettingsGeneral" />
+        <activity android:label="@string/calendar_integration" android:name="com.duckbone.callreminder.SettingsCalendarIntegration" />
+        <activity android:label="@string/app_theme" android:name="com.duckbone.callreminder.SettingsTheme" />
+        <activity android:label="@string/events" android:name="com.duckbone.callreminder.SettingsEvents" />
+        <activity android:label="@string/pref_title_call_confirmation" android:name="com.duckbone.callreminder.SettingsCallConfirm" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_edit_call_screen_note" android:name="com.duckbone.callreminder.EditCallScreenNote" android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden|stateVisible|stateAlwaysVisible|adjustResize|adjustNothing" />
+        <activity android:label="@string/title_activity_dialer" android:name="com.duckbone.callreminder.DialerActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateUnchanged|stateHidden|stateAlwaysHidden|stateAlwaysVisible" />
+        <activity android:label="@string/title_activity_contacts" android:name="com.duckbone.callreminder.contacts.ContactsActivity" />
+        <receiver android:name="com.duckbone.callreminder.receivers.AlarmReceiver" />
+        <receiver android:name="com.duckbone.callreminder.receivers.BootReceiver" android:enabled="true" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.duckbone.callreminder.receivers.IncomingCallReceiver" android:enabled="true" android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.duckbone.callreminder.receivers.OutgoingCallReceiver" android:enabled="true" android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.duckbone.callreminder.services.CallReminderNotificationService" android:enabled="true" android:exported="false" />
+        <service android:name="com.duckbone.callreminder.services.SmsReminderNotificationService" android:enabled="true" android:exported="false" />
+        <service android:name="com.duckbone.callreminder.services.MiscReminderNotificationService" android:enabled="true" android:exported="false" />
+        <service android:name="com.duckbone.callreminder.services.MiscReminderNotificationServicePreAlarm" android:enabled="true" android:exported="false" />
+        <service android:name="com.duckbone.callreminder.services.BootService" android:enabled="true" android:exported="false" />
+        <service android:name="com.duckbone.callreminder.services.AutoReminderService" android:enabled="true" android:exported="false" />
+        <receiver android:name="com.duckbone.callreminder.receivers.DailyReceiver" android:enabled="true" android:exported="false" />
+        <service android:name="com.duckbone.callreminder.services.DailyTaskService" android:enabled="true" android:exported="false" />
+        <service android:name="com.duckbone.callreminder.services.CallNoteService" android:enabled="true" android:exported="false" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_after_call_window" android:name="com.duckbone.callreminder.AfterCallWindow" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <activity android:label="@string/title_activity_change_log" android:name="com.duckbone.callreminder.ChangeLog" />
+        <receiver android:label="@string/app_name" android:icon="@drawable/widget_preview" android:name="com.duckbone.callreminder.LauncherWidget" android:previewImage="@drawable/widget_preview">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_provider" />
+        </receiver>
+        <activity android:label="@string/title_activity_premium_tour" android:name="com.duckbone.callreminder.premium_tour.PremiumTour" />
+        <activity android:label="@string/title_activity_feedback_form" android:name="com.duckbone.callreminder.FeedbackForm" android:windowSoftInputMode="adjustResize|adjustNothing" />
+        <activity android:label="@string/title_activity_backup_settings" android:name="com.duckbone.callreminder.data.BackupSettings" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/app_name" android:name="com.duckbone.callreminder.HandleIncomingIntents" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_color_picker" android:name="com.duckbone.callreminder.ColorPicker" android:excludeFromRecents="true" />
+        <activity android:label="@string/title_activity_quick_messages" android:name="com.duckbone.callreminder.QuickMessages" />
+        <service android:name="com.duckbone.callreminder.services.SendSmsService" android:enabled="true" android:exported="false" />
+        <activity android:label="@string/title_activity_edit_time_values" android:name="com.duckbone.callreminder.TimeValues" />
+        <activity android:label="@string/birthdays" android:name="com.duckbone.callreminder.Birthdays" />
+        <activity android:label="@string/title_activity_contact_details" android:name="com.duckbone.callreminder.ContactDetails" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_existing_reminders" android:name="com.duckbone.callreminder.ExistingReminders" android:taskAffinity="" android:excludeFromRecents="true" />
+        <service android:name="com.duckbone.callreminder.services.CalendarChangedService" android:enabled="true" android:exported="true" />
+        <activity android:label="@string/title_activity_duckbone_apps" android:name="com.duckbone.callreminder.DuckboneApps" />
+        <activity android:label="@string/title_activity_events" android:name="com.duckbone.callreminder.Events" />
+        <activity android:label="@string/title_activity_anniversaries" android:name="com.duckbone.callreminder.Anniversaries" />
+        <service android:name="com.duckbone.callreminder.services.BirthdayNotificationService" android:enabled="true" android:exported="false" />
+        <service android:name="com.duckbone.callreminder.services.AnniversaryNotificationService" android:enabled="true" android:exported="false" />
+        <receiver android:name="com.duckbone.callreminder.receivers.EventReceiver" android:enabled="true" android:exported="false" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_birthday_popup" android:name="com.duckbone.callreminder.BirthdayPopup" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_anniversary_popup" android:name="com.duckbone.callreminder.AnniversaryPopup" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <receiver android:name="com.duckbone.callreminder.receivers.QuickReminderReceiver" android:enabled="true" android:exported="true" />
+        <activity android:theme="@style/Theme_Transparent" android:label="@string/title_activity_call_confirmation_popup" android:name="com.duckbone.callreminder.CallConfirmationPopup" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <receiver android:name="com.duckbone.callreminder.receivers.PreAlarmReceiver" android:enabled="true" android:exported="true" />
+        <activity android:name="com.duckbone.callreminder.ChooseReminder" />
+        <service android:name="com.duckbone.callreminder.services.EmailReminderNotificationService" android:enabled="true" android:exported="true" />
+        <receiver android:name="com.duckbone.callreminder.receivers.NotificationActionButtonReciever" android:enabled="true" android:exported="true" />
+        <activity android:theme="@style/Theme_Transparent" android:name="com.duckbone.callreminder.SnoozeActionActivity" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" />
+        <receiver android:name="com.duckbone.callreminder.receivers.QuickActionClickReceiver" android:enabled="true" android:exported="true" />
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    </application>
+</manifest>
